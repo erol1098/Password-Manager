@@ -16,10 +16,10 @@ def password_generator():
     numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     symbols = ['!', '#', '$', '%', '&', '*', '+']
 
-    nr_letters= random.randint(6)
-    nr_cap = random.randint(2)
-    nr_symbols = random.randint(4)
-    nr_numbers = random.randint(4)
+    nr_letters= random.randint(5, 6)
+    nr_cap = random.randint(1, 2)
+    nr_symbols = random.randint(3, 4)
+    nr_numbers = random.randint(3, 4)
 
     password_list =[]
     password = ""
@@ -83,6 +83,8 @@ def searching():
             data = json.load(file)
     except FileNotFoundError:
         messagebox.showinfo(title="Oops!", message="File Not Found")
+    except:
+        messagebox.showinfo(title="Oops!", message="Database Is Empty! ")
     else:      
         if website in data:
             email = data[website]["email"]
